@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css.css') }}">
+  
+</head>
+
+<body>
+ <div class="">
+	<h1 class="h1 m-2">Predict Breast Cancer Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" class="gx-4 m-4 gy-2 align-items-center row" method="post">
+    
+      
+    
+    <div class="col-lg-3" ><input type="text" class="form-control" name="2" placeholder="radius_mean" required="required" /></div>
+		<div class="col-lg-3" ><input type="text" class="form-control" name="3" placeholder="texture_mean" required="required" /></div>
+    
+    <div class="col-lg-3" ><input type="text" class="form-control" name="4" placeholder="perimeter_mean" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" class="form-control" name="5" placeholder="area_mean" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" class="form-control"name="6" placeholder="smoothness_mean" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="7" class="form-control" placeholder="compactness_mean" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="8" class="form-control" placeholder="concavity_mean" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="9" class="form-control" placeholder="concave points_mean" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="10" class="form-control" placeholder="symmetry_mean" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="11" class="form-control" placeholder="fractal_dimension_mean" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="12" class="form-control" placeholder="radius_se" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="13" class="form-control"  placeholder="texture_se" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="14"class="form-control" placeholder="perimeter_se" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="15"class="form-control" placeholder="area_se" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="16"class="form-control" placeholder="smoothness_se" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="17" class="form-control" placeholder="compactness_se" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="18"class="form-control" placeholder="concavity_se" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="19" class="form-control"placeholder="concave points_se" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="20"class="form-control" placeholder="symmetry_se" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="21"class="form-control" placeholder="fractal_dimension_se" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="22" class="form-control"placeholder="radius_worst" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="23"class="form-control" placeholder="texture_worst" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="24" class="form-control"placeholder="perimeter_worst" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="25"class="form-control" placeholder="area_worst" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="26"class="form-control" placeholder="smoothness_worst" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="27"class="form-control" placeholder="compactness_worst" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="28"class="form-control" placeholder="concavity_worst" required="required" /></div>
+
+    <div class="col-lg-3" ><input type="text" name="29" class="form-control"placeholder="concave points_worst" required="required" /></div>
+    <div class="col-lg-3" ></div><div class="col-lg-3" ><input type="text" name="30" class="form-control"placeholder="symmetry_worst" required="required" /></div>
+    <div class="col-lg-3" ><input type="text" name="31"class="form-control" placeholder="fractal_dimension_worst" required="required" /></div>
+    <div class="col-lg-3" ></div>
+    <div class="col-lg-3" ></div><div class="col-lg-6" > <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></div>
+  
+    </form>
+
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
